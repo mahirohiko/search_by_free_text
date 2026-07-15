@@ -382,9 +382,10 @@ export default function AiSearchPage() {
               </div>
             ) : (
               <ul className="flex flex-col gap-4">
-                {filteredResults.map((product) => (
+                {filteredResults.map((product, index) => (
                   <li
-                    key={product.id}
+                    // key にインデックス番号を指定することで、確実にユニーク（0, 1, 2...）にします
+                    key={index}
                     className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
                   >
                     <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
